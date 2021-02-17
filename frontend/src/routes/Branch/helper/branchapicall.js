@@ -1,5 +1,7 @@
 const API = `http://localhost:3000`;
 
+
+// POST Request to backend for creating Branch
 export const createBranch = (branchBody) => {
     return fetch(`${API}/create-branch`, {
         method: "POST",
@@ -15,6 +17,7 @@ export const createBranch = (branchBody) => {
     .catch(err => console.log("err"))
 }
 
+// GET Request to backend for fetching all the branch informations
 export const getAllBranch = () => {
     return fetch(`${API}/get-all-branch`, {
         method: "GET",
@@ -28,7 +31,7 @@ export const getAllBranch = () => {
     .catch(err => console.log("err"))
 }
 
-
+// GET Request to backend for getting the branch Information with unique Id
 export const getBranch = (branchId) => {
     return fetch(`${API}/get-branch/${branchId}`, {
         method: "GET",
@@ -42,9 +45,8 @@ export const getBranch = (branchId) => {
     .catch(err => console.log("err"))
 }
 
-
+// PUT Request to backend for updating branch Information with unique Id
 export const updateBranch = (branchId, branchbody) => {
-  //  console.log(branchId)
     return fetch(`${API}/update-branch/${branchId}`, {
         method: "PUT",
         headers: {
@@ -59,7 +61,7 @@ export const updateBranch = (branchId, branchbody) => {
     .catch(err => console.log("err"))
 }
 
-
+// DELETE Request to backend for deleting Branch
 export const deleteBranch = (branchId) => {
     return fetch(`${API}/delete-branch/${branchId}`, {
         method: "DELETE",
